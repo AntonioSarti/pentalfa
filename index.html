@@ -20,19 +20,20 @@
     h1 { color: #6636a6; font-size: 30px; letter-spacing: -.6px; }
     .tagline { font-size: 13px; color: #65708a; margin-top: 2px; }
     .game-main { padding: 22px 16px 12px; }
-    .status-bar { box-shadow: 0 4px 0 #d4c4ee; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 16px; background: #fff; border: 2px solid #d8c9f0; border-radius: 26px; }
-    .level-info,.counter,.actions { display: flex; align-items: center; margin: 6px; }
-    .badge { border: 2px solid #d7bdf5; padding: 10px; margin-right: 14px; background: #f2e8ff; border-radius: 18px; font-size: 30px; }
+    .status-bar { box-shadow: 0 4px 0 #d4c4ee; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 8px 10px; background: #fff; border: 2px solid #d8c9f0; border-radius: 26px; }
+    .level-info,.counter,.actions { display: flex; align-items: center; margin: 3px; }
+    .badge { border: 2px solid #d7bdf5; padding: 6px; margin-right: 10px; background: #f2e8ff; border-radius: 14px; font-size: 24px; }
     h2 { color: #513482; font-size: 22px; letter-spacing: -.3px; }
-    .subtitle { color: #646781; font-size: 14px; margin-top: 4px; }
-    .counter { background: #fff5d6; border: 2px solid #f5d88a; border-radius: 20px; padding: 8px 14px; }
-    .counter-label { display: block; font-size: 10px; letter-spacing: .6px; text-transform: uppercase; color: #87602a; font-weight: bold; }
-    .counter-number { display: block; text-align: center; font-size: 28px; font-weight: bold; color: #8b541e; }
-    .unplaced-pieces { margin-left: 12px; font-size: 25px; max-width: 230px; }
+    .subtitle { color: #646781; font-size: 14px; margin-top: 1px; }
+    .counter { background: #fff5d6; border: 2px solid #f5d88a; border-radius: 14px; padding: 4px 9px; }
+    .counter > div:first-child { white-space: nowrap; }
+    .counter-label { display: inline-block; font-size: 10px; letter-spacing: .6px; text-transform: uppercase; color: #87602a; font-weight: bold; }
+    .counter-number { display: inline-block; margin-left: 6px; text-align: center; font-size: 24px; font-weight: bold; color: #8b541e; }
+    .unplaced-pieces { margin-left: 8px; font-size: 20px; max-width: 230px; }
     .unplaced-pieces span { display: inline-block; margin: 0 2px; }
-    .actions { flex-wrap: wrap; width: 100%; padding-top: 10px; margin-top: 10px; border-top: 1px solid #eee8f6; }
+    .actions { flex-wrap: wrap; width: 100%; padding-top: 4px; margin-top: 4px; border-top: 1px solid #eee8f6; }
     .button { display: inline-block; min-height: 44px; border: 1px solid transparent; border-bottom: 4px solid #cad2e4; padding: 10px 16px; border-radius: 16px; background: #eef2fb; color: #46516d; font-weight: bold; }
-    .actions .button { margin: 4px; font-size: 14px; }
+    .actions .button { margin: 3px; font-size: 14px; }
     .button:hover { background-color: #d8dfef; }
     .button-amber { background: #ffdc85; border-color: #dea638; color: #67461a; }
     .button-sky { background: #9fe6ec; border-color: #50acb9; color: #195765; }
@@ -117,11 +118,11 @@
     .cloud { opacity: .9; }
     .board-shell .square-board { border-radius: 22px; }
     @media (max-width: 540px) {
-      .status-bar { border-radius: 22px; padding: 9px; }
-      .actions { margin-left: 2px; margin-right: 2px; padding-top: 8px; }
+      .status-bar { border-radius: 20px; padding: 6px; }
+      .actions { margin-left: 1px; margin-right: 1px; padding-top: 3px; }
       .actions .button { padding: 8px 12px; }
       .board-shell { margin-top: 22px; border-radius: 26px; padding: 8px; }
-      .badge { padding: 8px; }
+      .badge { padding: 5px; }
     }
 
   </style>
