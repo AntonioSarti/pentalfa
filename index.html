@@ -6,66 +6,62 @@
   <title>Pentalfa Mágico — Jogo das Formas</title>
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; color: #29344d; background: #dff1ff; background: linear-gradient(180deg,#cceeff 0%,#ede0ff 55%,#d9f5df 100%); font-family: "Trebuchet MS",Verdana,Arial,sans-serif; line-height: 1.45; }
+    body { margin: 0; color: #30364e; background: #edf4ff; background: linear-gradient(160deg,#e0f5ff 0%,#eee6ff 48%,#e4f8ee 100%); font-family: "Trebuchet MS",Verdana,Arial,sans-serif; line-height: 1.45; }
     button { font: inherit; cursor: pointer; touch-action: manipulation; }
     button:focus, [role="button"]:focus { outline: 3px solid #2563eb; outline-offset: 3px; }
     button:disabled { cursor: default; opacity: .6; }
     h1,h2,h3,p,figure { margin: 0; }
     h1,h2,h3,.friendly { font-family: "Trebuchet MS","Arial Rounded MT Bold",Verdana,sans-serif; }
     .hidden { display: none !important; }
-    .header { position: relative; padding: 16px; background: #fffdf8; border-bottom: 6px solid #ffbd59; }
+    .header { position: relative; padding: 18px 16px; background: #fffdf9; border-bottom: 6px solid #ffbd59; }
     .header-inner,.game-main { max-width: 940px; margin: 0 auto; }
-    .brand { display: flex; align-items: center; margin-bottom: 14px; }
-    .brand-star { background: #ffdb70; border: 2px solid #ffbc43; box-shadow: 0 3px 0 #f5aa36; border-radius: 16px; font-size: 32px; padding: 4px 12px; margin-right: 12px; }
-    h1 { color: #6939b2; font-size: 28px; }
-    .tagline { font-size: 13px; color: #56667e; }
-    .level-selector { display: flex; flex-wrap: wrap; padding: 6px; background: #edf0fa; border: 1px solid #d8dfef; border-radius: 16px; }
-    .level-button { margin: 4px; padding: 8px 12px; border: 2px solid transparent; border-radius: 12px; background: transparent; color: #4a5874; font-size: 14px; font-weight: bold; }
-    .level-button:hover { background: #fff; }
-    .level-button.selected { background: #f4ecff; color: #563497; border-color: #9a7cce; }
-    .game-main { padding: 16px; }
-    .status-bar { box-shadow: 0 4px 0 #ccb5ef; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 12px; background: #fffdfb; border: 3px solid #c9b9e9; border-radius: 22px; }
+    .brand { display: flex; align-items: center; margin-bottom: 0; }
+    .brand-star { background: #ffdf86; border: 2px solid #ffc24c; box-shadow: 0 4px 0 #efb348; border-radius: 20px; font-size: 34px; padding: 5px 13px; margin-right: 14px; transform: rotate(-6deg); }
+    h1 { color: #6636a6; font-size: 30px; letter-spacing: -.6px; }
+    .tagline { font-size: 13px; color: #65708a; margin-top: 2px; }
+    .game-main { padding: 22px 16px 12px; }
+    .status-bar { box-shadow: 0 4px 0 #d4c4ee; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 16px; background: #fff; border: 2px solid #d8c9f0; border-radius: 26px; }
     .level-info,.counter,.actions { display: flex; align-items: center; margin: 6px; }
-    .badge { border: 2px solid #cab0ef; padding: 8px; margin-right: 12px; background: #eee5fa; border-radius: 14px; font-size: 30px; }
-    h2 { color: #473174; font-size: 21px; }
-    .subtitle { color: #674b9f; font-size: 14px; }
-    .counter { background: #fff0b5; border: 2px solid #f6c451; border-radius: 14px; padding: 8px 12px; }
-    .counter-label { display: block; font-size: 10px; text-transform: uppercase; color: #81521c; }
-    .counter-number { display: block; text-align: center; font-size: 26px; font-weight: bold; color: #94531d; }
+    .badge { border: 2px solid #d7bdf5; padding: 10px; margin-right: 14px; background: #f2e8ff; border-radius: 18px; font-size: 30px; }
+    h2 { color: #513482; font-size: 22px; letter-spacing: -.3px; }
+    .subtitle { color: #646781; font-size: 14px; margin-top: 4px; }
+    .counter { background: #fff5d6; border: 2px solid #f5d88a; border-radius: 20px; padding: 8px 14px; }
+    .counter-label { display: block; font-size: 10px; letter-spacing: .6px; text-transform: uppercase; color: #87602a; font-weight: bold; }
+    .counter-number { display: block; text-align: center; font-size: 28px; font-weight: bold; color: #8b541e; }
     .unplaced-pieces { margin-left: 12px; font-size: 25px; max-width: 230px; }
     .unplaced-pieces span { display: inline-block; margin: 0 2px; }
-    .actions { flex-wrap: wrap; }
-    .button { display: inline-block; border: 0; border-bottom: 4px solid #c7d2e5; padding: 9px 14px; border-radius: 14px; background: #edf0fa; color: #35445f; font-weight: bold; }
+    .actions { flex-wrap: wrap; width: 100%; padding-top: 10px; margin-top: 10px; border-top: 1px solid #eee8f6; }
+    .button { display: inline-block; min-height: 44px; border: 1px solid transparent; border-bottom: 4px solid #cad2e4; padding: 10px 16px; border-radius: 16px; background: #eef2fb; color: #46516d; font-weight: bold; }
     .actions .button { margin: 4px; font-size: 14px; }
     .button:hover { background-color: #d8dfef; }
-    .button-amber { background: #ffce64; border-color: #c68624; color: #654112; }
-    .button-sky { background: #70d6f5; border-color: #258ab2; color: #104e66; }
-    .button-purple { background: #7c45ba; border-color: #523080; color: #fff; }
-    .button-green { background: #86e0b0; border-color: #33986b; color: #1c583d; }
-    .board-shell { position: relative; max-width: 520px; margin: 18px auto 0; padding: 8px; background: #fffcf5; background: linear-gradient(160deg,#fffcf5,#eff8fb); border: 5px solid #b895e7; border-radius: 28px; box-shadow: 0 6px 0 #cdb6ef; }
+    .button-amber { background: #ffdc85; border-color: #dea638; color: #67461a; }
+    .button-sky { background: #9fe6ec; border-color: #50acb9; color: #195765; }
+    .button-purple { background: #7745b4; border-color: #512c81; color: #fff; }
+    .button-green { background: #a2e5bd; border-color: #55ac79; color: #225c3d; }
+    .board-shell { position: relative; max-width: 520px; margin: 26px auto 0; padding: 10px; background: #fffef9; background: linear-gradient(160deg,#fffef9 20%,#f2faff 100%); border: 4px solid #c7a5ee; border-radius: 32px; box-shadow: 0 6px 0 #d0b7ef,0 10px 16px rgba(76,53,111,.08); }
     /* Padding creates a square without CSS aspect-ratio. */
     .square-board { position: relative; width: 100%; padding-top: 100%; }
     .square-board svg { display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    .instruction { border-bottom: 3px solid #432b71; margin: 8px 4px 4px; padding: 9px 12px; background: #5d4489; color: #fff; border-radius: 14px; font-size: 14px; text-align: center; }
+    .instruction { border-bottom: 3px solid #53357e; margin: 8px 4px 4px; padding: 11px 14px; background: #705095; color: #fff; border-radius: 18px; font-size: 14px; font-weight: bold; text-align: center; }
     .rule-tip { margin: 14px auto; max-width: 680px; padding: 10px 14px; background: #fff; border-radius: 16px; text-align: center; font-size: 14px; }
-    .footer { max-width: 940px; margin: 0 auto; padding: 16px 20px 24px; color: #4a5874; text-align: center; font-size: 14px; line-height: 1.6; }
+    .footer { max-width: 940px; margin: 0 auto; padding: 18px 20px 28px; color: #57647f; text-align: center; font-size: 13px; line-height: 1.7; }
     .footer p + p { margin-top: 4px; }
     .board-line { stroke-linecap: round; stroke-linejoin: round; }
     .node { cursor: pointer; }
     .modal { position: fixed; z-index: 10; top: 0; right: 0; bottom: 0; left: 0; padding: 16px; background: rgba(38,32,65,.72); display: flex; align-items: center; justify-content: center; }
-    .modal-card { width: 100%; max-width: 460px; max-height: 92vh; overflow-y: auto; padding: 22px; background: #fff; border: 4px solid #f2cd7b; border-radius: 24px; text-align: center; }
+    .modal-card { width: 100%; max-width: 460px; max-height: 92vh; overflow-y: auto; padding: 22px; background: #fffdf9; border: 4px solid #f0cf7f; border-radius: 28px; text-align: center; }
     .modal-card h3 { font-size: 28px; color: #81521c; margin: 12px 0; }
     .modal-card p { margin: 12px 0; }
     .modal-card .button { margin-top: 12px; width: 100%; font-size: 18px; }
     .celebration { font-size: 58px; background: #fff4d9; border-radius: 50%; width: 98px; margin: 0 auto; }
-    .tutorial-card { max-width: 460px; height: 70vh; max-height: 580px; padding: 16px; display: flex; flex-direction: column; overflow: hidden; border-color: #c7b1e5; text-align: left; }
+    .tutorial-card { max-width: 460px; height: 70vh; max-height: 580px; padding: 16px; display: flex; flex-direction: column; overflow: hidden; border-color: #c9acee; text-align: left; }
     .tutorial-header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 12px; border-bottom: 2px solid #edf0fa; flex-shrink: 0; }
     .tutorial-header h3 { margin: 0; font-size: 23px; color: #35445f; }
-    .close-button { border: 0; border-radius: 50%; background: #edf0fa; padding: 8px 13px; margin-left: 10px; font-size: 22px; }
+    .close-button { border: 0; border-radius: 50%; background: #eee7fa; padding: 8px 13px; margin-left: 10px; font-size: 22px; }
     .tutorial-content { min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; font-size: 19px; line-height: 1.55; padding-right: 4px; }
     .tutorial-content p { margin: 14px 0; }
-    .tutorial-objective { padding: 12px; background: #ece0ff; border: 1px solid #c9b9e9; border-radius: 16px; color: #563497; font-weight: bold; text-align: center; }
-    .tutorial-figure { background: #fff9e9; border: 1px solid #d8dfef; border-radius: 18px; padding: 12px; text-align: center; }
+    .tutorial-objective { padding: 12px; background: #eee5fc; border: 1px solid #d6c2ef; border-radius: 16px; color: #563497; font-weight: bold; text-align: center; }
+    .tutorial-figure { background: #fffaef; border: 1px solid #efddb3; border-radius: 18px; padding: 12px; text-align: center; }
     .tutorial-figure figcaption { font-size: 23px; color: #563497; font-weight: bold; }
     .example-size { width: 100%; max-width: 480px; margin: 10px auto; }
     .example-caption { min-height: 88px; color: #473174; font-weight: bold; }
@@ -82,13 +78,12 @@
       .level-info { width: 100%; } .badge { font-size: 24px; }
       .actions .button { padding: 8px 10px; } .modal { padding: 8px; }
       .tutorial-card { padding: 12px; } .tutorial-header h3 { font-size: 20px; }
-      .level-button { font-size: 13px; padding: 7px 9px; }
     }
 
-    .button-amber:hover { background: #f5bf4e; }
-    .button-sky:hover { background: #56c6ed; }
-    .button-purple:hover { background: #69379f; }
-    .button-green:hover { background: #6cd29a; }
+    .button-amber:hover { background: #ffd16b; }
+    .button-sky:hover { background: #88dce4; }
+    .button-purple:hover { background: #6839a3; }
+    .button-green:hover { background: #8bdaac; }
     /* Static scenery uses only small CSS shapes, with no images or animation. */
     .scenery { position: absolute; top: 0; left: 0; width: 100%; height: 850px; overflow: hidden; pointer-events: none; }
     .header,.game-main,.footer { position: relative; }
@@ -100,41 +95,46 @@
     .cloud:before { width: 48px; height: 48px; left: 16px; top: -25px; }
     .cloud:after { width: 65px; height: 65px; right: 10px; top: -36px; }
     .cloud-one { top: 310px; left: 5%; } .cloud-two { top: 570px; right: 3%; width: 140px; }
-    .rainbow { position: absolute; top: 500px; left: 3%; width: 168px; height: 84px; border: 12px solid #fba1b7; border-bottom: 0; border-radius: 100px 100px 0 0; }
-    .rainbow:before,.rainbow:after { content: ""; position: absolute; border-bottom: 0; border-radius: 100px 100px 0 0; }
-    .rainbow:before { top: 0; left: 0; width: 144px; height: 72px; border: 12px solid #ffdc87; border-bottom: 0; }
-    .rainbow:after { top: 12px; left: 12px; width: 120px; height: 60px; border: 12px solid #92dbcb; border-bottom: 0; }
     .sparkle { position: absolute; font-size: 32px; color: #9b78cc; } .sparkle-one { top: 700px; left: 9%; } .sparkle-two { top: 435px; right: 11%; color: #dc6f96; }
-    .level-selector { background: #f3edff; border-color: #dfcef6; }
-    .level-button { border-radius: 16px; }
-    .level-button:nth-child(4n+1) { background: #ffe3ec; color: #913551; }
-    .level-button:nth-child(4n+2) { background: #d9f3ff; color: #225d7f; }
-    .level-button:nth-child(4n+3) { background: #d9f5e8; color: #27654e; }
-    .level-button:nth-child(4n) { background: #fff0c6; color: #80521e; }
-    .level-selector .level-button:hover { border-color: #bb96e7; }
-    .level-selector .level-button.selected { background: #7542af; color: #fff; border-color: #573080; box-shadow: 0 3px 0 #d6b8f1; }
     .button:active { transform: translateY(2px); }
     .board-shell:before,.board-shell:after { position: absolute; pointer-events: none; font-size: 28px; line-height: 1; }
     .board-shell:before { content: "✦"; color: #e7aa35; left: 18px; top: 16px; }
     .board-shell:after { content: "✦"; color: #b687de; right: 18px; top: 16px; }
-    .rule-tip { border: 2px solid #c3dcf0; background: #f7fcff; }
+    .rule-tip { border: 1px solid #c6dfdf; background: #f2fcf8; color: #365d59; line-height: 1.6; }
     @media (max-width: 640px) {
       .sun { width: 48px; height: 48px; top: 265px; right: -12px; border-width: 5px; }
       .sun:after { top: 20px; left: 11px; width: 15px; height: 8px; }
+      .sparkle { display: none; }
       .cloud-one { left: -60px; top: 440px; } .cloud-two { right: -85px; top: 680px; }
-      .rainbow { left: -100px; top: 620px; } .sparkle { display: none; }
     }
+
+    .actions .button { padding: 9px 15px; }
+    .actions .button-green { background: #7745b4; border-color: #512c81; color: #fff; }
+    .actions .button-green:hover { background: #6839a3; }
+    .action-pair { display: inline-flex; flex-wrap: wrap; align-items: center; max-width: 100%; }
+    #btn-sound { width: 46px; padding-left: 0; padding-right: 0; border-radius: 50%; }
+    .sun { background: #ffdb7e; border-color: #fff0c3; }
+    .cloud { opacity: .9; }
+    .board-shell .square-board { border-radius: 22px; }
+    @media (max-width: 540px) {
+      .status-bar { border-radius: 22px; padding: 9px; }
+      .actions { margin-left: 2px; margin-right: 2px; padding-top: 8px; }
+      .actions .button { padding: 8px 12px; }
+      .board-shell { margin-top: 22px; border-radius: 26px; padding: 8px; }
+      .badge { padding: 8px; }
+    }
+
   </style>
 </head>
 <body>
   <div class="scenery" aria-hidden="true"><span class="sun"></span><span class="cloud cloud-one"></span><span class="cloud cloud-two"></span><span class="sparkle sparkle-one">✦</span><span class="sparkle sparkle-two">✦</span></div>
-  <header class="header"><div class="header-inner"><div class="brand"><div class="brand-star" aria-hidden="true">⭐</div><div><h1>Pentalfa Mágico</h1><p class="tagline">O Desafio das Formas Geométricas!</p></div></div><nav id="level-selector" class="level-selector" aria-label="Escolha a fase"></nav></div></header>
+  <header class="header"><div class="header-inner"><div class="brand"><div class="brand-star" aria-hidden="true">⭐</div><div><h1>Pentalfa Mágico</h1><p class="tagline">O Desafio das Formas Geométricas!</p></div></div></div></header>
   <noscript><p class="noscript">Ative o JavaScript do navegador para jogar.</p></noscript>
   <main class="game-main">
     <section class="status-bar" aria-label="Informações da fase">
       <div class="level-info"><div id="level-badge-icon" class="badge" aria-hidden="true">➖</div><div><h2 id="level-title">Nível 1 — Linha — 3 lacunas</h2><p id="level-subtitle" class="subtitle">2 amiguinhos para encaixar em 3 espaços</p></div></div>
       <div class="counter"><div><span class="counter-label">Faltam colocar</span><span id="pieces-remaining" class="counter-number">2</span></div><div id="unplaced-pieces-container" class="unplaced-pieces" aria-hidden="true"></div></div>
-      <div class="actions"><button id="btn-sound" class="button" type="button" onclick="audio.toggleMute()" title="Ativar ou desativar som" aria-label="Desativar som">🔊</button><button class="button button-amber" type="button" onclick="game.resetLevel()">Reiniciar</button><button id="btn-tutorial" class="button button-sky" type="button" onclick="game.openTutorial()">Como Jogar</button></div>
+      <div class="actions"><button id="btn-sound" class="button" type="button" onclick="audio.toggleMute()" title="Ativar ou desativar som" aria-label="Desativar som">🔊</button><button class="button button-amber" type="button" onclick="game.resetLevel()">Reiniciar</button><span class="action-pair"><button id="btn-tutorial" class="button button-sky" type="button" onclick="game.openTutorial()">Como Jogar</button><button id="btn-advance" class="button button-green" type="button" onclick="game.nextLevel()">Avançar fase ➜</button></span></div>
     </section>
     <div class="board-shell"><div class="square-board"><svg id="game-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="group" aria-label="Tabuleiro da fase"></svg></div><p id="instruction-text" class="instruction" aria-live="polite">Clique em uma bolinha vazia para começar!</p></div>
     <p class="rule-tip">💡 <span id="rule-tip">Escolha o início vazio e depois o destino vazio.</span></p>
@@ -231,18 +231,7 @@
       this.moveAnimation = null; this.modalFocus = null; this.svg = byId('game-svg');
     }
     PentalfaGame.prototype.init = function () {
-      var selector = byId('level-selector'), self = this, i;
-      empty(selector);
-      for (i = 0; i < LEVELS.length; i++) {
-        (function (index) {
-          var button = document.createElement('button');
-          button.id = 'btn-lvl-' + (index + 1); button.type = 'button'; button.className = 'level-button';
-          button.textContent = LEVELS[index].icon + ' ' + LEVELS[index].name.replace(/^Nível \d+ - /, '');
-          button.title = LEVELS[index].name;
-          button.onclick = function () { self.loadLevel(index); };
-          selector.appendChild(button);
-        }(i));
-      }
+      var self = this;
       this.loadLevel(0);
       document.addEventListener('visibilitychange', function () {
         if (document.hidden) {
@@ -275,13 +264,10 @@
       this.selectedStartNode = null; this.validTargetNodes = []; this.placedCount = 0;
       this.isAnimating = false; this.finished = false; this.boardState = [];
       byId('btn-tutorial').disabled = false;
-      var i, button;
+      var i;
       for (i = 0; i < this.level.N; i++) this.boardState.push(null);
-      for (i = 0; i < LEVELS.length; i++) {
-        button = byId('btn-lvl-' + (i + 1));
-        button.className = 'level-button' + (index === i ? ' selected' : '');
-        button.setAttribute('aria-pressed', String(index === i));
-      }
+      byId('btn-advance').textContent = index < LEVELS.length - 1 ? 'Próximo Nível ➜' : 'Voltar ao início ↺';
+      byId('btn-advance').title = LEVELS[(index + 1) % LEVELS.length].name;
       byId('level-title').textContent = this.level.name;
       byId('level-subtitle').textContent = this.level.subtitle;
       byId('level-badge-icon').textContent = this.level.icon;
