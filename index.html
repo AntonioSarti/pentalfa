@@ -125,6 +125,98 @@
       .badge { padding: 5px; }
     }
 
+    /* Compact controls keep the board prominent on desktop and mobile. */
+    .header { padding: 10px 16px; }
+    .brand-star { font-size: 28px; padding: 3px 9px; margin-right: 10px; border-radius: 14px; }
+    h1 { font-size: 26px; }
+    .game-main { padding: 12px 16px 8px; }
+    .status-bar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 10px; padding: 8px 10px; border-radius: 18px; box-shadow: 0 3px 0 #d4c4ee; }
+    .level-info,.counter,.actions { margin: 0; min-width: 0; }
+    .badge { flex-shrink: 0; font-size: 20px; padding: 3px 5px; margin-right: 8px; border-radius: 10px; }
+    h2 { font-size: 18px; line-height: 1.25; }
+    .subtitle { font-size: 12px; line-height: 1.3; }
+    .counter { padding: 3px 7px; border-radius: 10px; }
+    .counter-label { font-size: 10px; letter-spacing: .2px; }
+    .counter-number { font-size: 20px; margin-left: 4px; }
+    .unplaced-pieces { display: flex; flex-wrap: wrap; max-width: 100px; gap: 2px; margin-left: 6px; font-size: 16px; line-height: 1.1; }
+    .unplaced-pieces span { margin: 0; }
+    .actions { grid-column: 1 / -1; display: grid; grid-template-columns: 44px auto auto auto; justify-content: end; gap: 6px; width: auto; padding-top: 6px; }
+    .action-pair { display: contents; }
+    .actions .button { min-height: 44px; margin: 0; padding: 6px 10px; font-size: 13px; line-height: 1.2; border-radius: 11px; border-bottom-width: 3px; }
+    #btn-sound { width: 44px; border-radius: 11px; }
+    .board-shell { max-width: 460px; margin-top: 12px; padding: 6px; border-width: 3px; border-radius: 24px; }
+    .instruction { margin: 4px 2px 2px; padding: 8px 10px; font-size: 13px; line-height: 1.35; border-radius: 12px; }
+    .rule-tip { max-width: 600px; margin: 10px auto 0; padding: 7px 10px; font-size: 13px; line-height: 1.4; border-radius: 12px; }
+    .footer { padding: 12px 16px 16px; font-size: 11px; line-height: 1.4; }
+    @media (min-width: 900px) {
+      .status-bar { grid-template-columns: minmax(0, 1fr) auto auto; }
+      .actions { grid-column: auto; border-top: 0; border-left: 1px solid #eee8f6; padding: 0 0 0 10px; }
+    }
+    @media (max-width: 540px) {
+      .header { padding: 8px 10px; }
+      h1 { font-size: 22px; }
+      .tagline { font-size: 11px; }
+      .brand-star { font-size: 24px; }
+      .game-main { padding: 8px; }
+      .status-bar { gap: 5px 6px; padding: 7px; border-radius: 15px; }
+      .level-info { grid-column: 1 / -1; width: auto; }
+      h2 { font-size: 16px; }
+      .subtitle { font-size: 11px; }
+      .badge { font-size: 18px; padding: 3px 5px; }
+      .counter { grid-column: 1 / -1; justify-content: space-between; padding: 2px 7px; }
+      .unplaced-pieces { max-width: none; font-size: 15px; }
+      .actions { grid-template-columns: 44px minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.2fr); gap: 4px; padding-top: 5px; }
+      .actions .button { padding: 5px 4px; font-size: 12px; overflow-wrap: anywhere; }
+      .board-shell { margin-top: 10px; padding: 4px; border-radius: 20px; }
+      .instruction { padding: 7px 8px; font-size: 12px; }
+      .rule-tip { margin-top: 8px; font-size: 12px; }
+    }
+    @media (max-height: 540px) and (min-width: 600px) {
+      .game-main { display: grid; grid-template-columns: minmax(240px, 1fr) minmax(0, 380px); align-items: start; gap: 10px 16px; }
+      .status-bar { grid-column: 1; grid-row: 1; grid-template-columns: minmax(0, 1fr); }
+      .counter { grid-column: 1; }
+      .actions { grid-column: 1; grid-template-columns: 44px minmax(0, 1fr); border-left: 0; border-top: 1px solid #eee8f6; padding: 6px 0 0; }
+      .board-shell { grid-column: 2; grid-row: 1 / 3; margin-top: 0; width: 100%; }
+      .rule-tip { grid-column: 1; margin-top: 0; }
+    }
+    /* Compact tutorial with instructions beside the animated example. */
+    .tutorial-card { max-width: 680px; height: auto; max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px); padding: 12px; border-width: 3px; border-radius: 20px; }
+    .tutorial-header { gap: 8px; padding-bottom: 8px; border-bottom-width: 1px; }
+    .tutorial-header h3 { font-size: 18px; line-height: 1.3; }
+    .tutorial-header .close-button { flex-shrink: 0; min-width: 44px; min-height: 44px; margin-left: 0; padding: 5px; font-size: 20px; }
+    .tutorial-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px; align-items: start; flex: 1 1 auto; padding: 10px 2px 2px 0; font-size: 14px; line-height: 1.4; }
+    .tutorial-content > p { grid-column: 1; margin: 0; }
+    .tutorial-objective,.tutorial-rule,.tutorial-warning { padding: 8px 10px; border-radius: 10px; }
+    .tutorial-warning { font-size: 14px; }
+    .tutorial-figure { grid-column: 2; grid-row: 1 / span 4; padding: 8px; border-radius: 12px; }
+    .tutorial-figure figcaption { font-size: 16px; line-height: 1.3; }
+    .example-size { max-width: 230px; margin: 6px auto; }
+    .tutorial-figure .example-caption { min-height: 60px; margin: 6px 0; font-size: 14px; line-height: 1.4; }
+    .tutorial-card .button { min-height: 44px; padding: 6px 10px; border-radius: 11px; border-bottom-width: 3px; font-size: 14px; }
+    .tutorial-figure .button { width: auto; margin-top: 0; }
+    .tutorial-footer { padding-top: 8px; margin-top: 8px; border-top: 1px solid #edf0fa; }
+    .tutorial-footer .button { margin-top: 0; }
+    @media (max-width: 540px) {
+      .tutorial-card { max-height: calc(100vh - 16px); max-height: calc(100dvh - 16px); padding: 10px; border-radius: 16px; }
+      .tutorial-header h3 { font-size: 16px; }
+      .tutorial-content { display: block; padding-top: 8px; }
+      .tutorial-content > p { margin: 0 0 8px; }
+      .tutorial-figure { margin-bottom: 8px; }
+      .example-size { max-width: 200px; margin: 4px auto; }
+      .tutorial-figure .example-caption { min-height: 40px; }
+      .tutorial-footer { margin-top: 4px; padding-top: 6px; }
+    }
+    @media (max-height: 540px) and (min-width: 541px) {
+      .tutorial-card { max-width: 760px; padding: 8px 10px; }
+      .example-size { max-width: 160px; }
+      .tutorial-figure .example-caption { min-height: 40px; }
+      .tutorial-content { gap: 6px; padding-top: 6px; }
+      .tutorial-footer { margin-top: 4px; padding-top: 6px; }
+    }
+    .modal-card.final-victory { max-width: 560px; border-color: #e7b438; border-width: 5px; background: linear-gradient(145deg, #fffdf4, #fff0c7); box-shadow: 0 0 0 6px rgba(255, 220, 112, .22), 0 16px 48px rgba(38, 32, 65, .3); }
+    .final-victory .celebration { width: 112px; font-size: 72px; background: #ffe49a; }
+    .final-victory #victory-title { color: #6636a6; font-size: clamp(26px, 5vw, 36px); line-height: 1.15; }
+    .final-victory #victory-message { color: #67461a; font-size: clamp(17px, 3vw, 21px); line-height: 1.5; font-weight: bold; }
   </style>
 </head>
 <body>
@@ -133,22 +225,23 @@
   <noscript><p class="noscript">Ative o JavaScript do navegador para jogar.</p></noscript>
   <main class="game-main">
     <section class="status-bar" aria-label="Informações da fase">
-      <div class="level-info"><div id="level-badge-icon" class="badge" aria-hidden="true">➖</div><div><h2 id="level-title">Nível 1 — Linha — 3 lacunas</h2><p id="level-subtitle" class="subtitle">2 amiguinhos para encaixar em 3 espaços</p></div></div>
+      <div class="level-info"><div id="level-badge-icon" class="badge" aria-hidden="true">➖</div><div><h2 id="level-title">Nível 1 — Linha — 3 casas</h2><p id="level-subtitle" class="subtitle">2 peças para colocar em 3 casas</p></div></div>
       <div class="counter"><div><span class="counter-label">Faltam colocar</span><span id="pieces-remaining" class="counter-number">2</span></div><div id="unplaced-pieces-container" class="unplaced-pieces" aria-hidden="true"></div></div>
       <div class="actions"><button id="btn-sound" class="button" type="button" onclick="audio.toggleMute()" title="Ativar ou desativar som" aria-label="Desativar som">🔊</button><button class="button button-amber" type="button" onclick="game.resetLevel()">Reiniciar</button><span class="action-pair"><button id="btn-tutorial" class="button button-sky" type="button" onclick="game.openTutorial()">Como Jogar</button><button id="btn-advance" class="button button-green" type="button" onclick="game.nextLevel()">Avançar fase ➜</button></span></div>
     </section>
-    <div class="board-shell"><div class="square-board"><svg id="game-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="group" aria-label="Tabuleiro da fase"></svg></div><p id="instruction-text" class="instruction" aria-live="polite">Clique em uma bolinha vazia para começar!</p></div>
+    <div class="board-shell"><div class="square-board"><svg id="game-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="group" aria-label="Tabuleiro da fase"></svg></div><p id="instruction-text" class="instruction" aria-live="polite">Escolha uma casa vazia para começar!</p></div>
     <p class="rule-tip">💡 <span id="rule-tip">Escolha o início vazio e depois o destino vazio.</span></p>
   </main>
   <!-- RODAPÉ -->
   <footer class="footer">
     <p>Desenvolvido por <strong>Antonio C. G. Sarti</strong> - HTML, CSS e JavaScript.</p>
-    <p>Jogo educativo baseado no Pentalfa.</p>
+    <p>Jogo educativo baseado no Game Pentalpha.</p>
   </footer>
   <div id="tutorial-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="tutorial-title">
     <div class="modal-card tutorial-card">
       <div class="tutorial-header"><h3 id="tutorial-title">Como Jogar?</h3><button id="tutorial-close" class="close-button" type="button" onclick="game.closeTutorial()" aria-label="Fechar instruções">✕</button></div>
       <div class="tutorial-content">
+        <p id="classic-rules-notice" class="tutorial-warning hidden"><strong>Atenção: nesta fase, é preciso saltar uma casa.</strong></p>
         <p id="tutorial-objective" class="tutorial-objective"></p>
         <figure class="tutorial-figure"><figcaption>Exemplo de uma jogada</figcaption><div class="example-size"><div class="square-board"><svg id="tutorial-example" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-label="Exemplo de movimento permitido"></svg></div></div><p id="tutorial-example-caption" class="example-caption"></p><button class="button" type="button" onclick="game.startTutorialExample()">Repetir exemplo</button></figure>
         <p id="tutorial-movement" class="tutorial-rule"></p><p class="tutorial-warning">Sem jogadas antes de completar a meta? Reinicie e tente outra ordem!</p>
@@ -156,12 +249,12 @@
       <div class="tutorial-footer"><button class="button button-purple" type="button" onclick="game.closeTutorial()">Entendi! Vamos Jogar! 🚀</button></div>
     </div>
   </div>
-  <div id="victory-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="victory-title"><div class="modal-card"><div class="celebration" aria-hidden="true">🏆</div><h3 id="victory-title">Parabéns! Você Venceu!</h3><p id="victory-message"></p><button id="btn-next-level" class="button button-green" type="button" onclick="game.nextLevel()">Próxima Fase! ➡️</button><button class="button" type="button" onclick="game.resetLevel()">Jogar esta fase novamente 🔄</button></div></div>
+  <div id="victory-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="victory-title"><div id="victory-card" class="modal-card"><div class="celebration" aria-hidden="true">🏆</div><h3 id="victory-title">Parabéns! Você Venceu!</h3><p id="victory-message"></p><button id="btn-new-game" class="button button-purple hidden" type="button" onclick="game.startNewGame()">Jogar todas as fases novamente ⭐</button><button id="btn-next-level" class="button button-green" type="button" onclick="game.nextLevel()">Próxima Fase! ➡️</button><button class="button" type="button" onclick="game.resetLevel()">Jogar esta fase novamente 🔄</button></div></div>
   <div id="gameover-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="gameover-title"><div class="modal-card gameover-card"><div class="celebration" aria-hidden="true">🤔</div><h3 id="gameover-title">Ops! Sem jogadas possíveis</h3><p>Não há mais um início e um destino vazios para colocar as peças restantes.</p><button class="button button-amber" type="button" onclick="game.resetLevel()">Tentar novamente 🔄</button></div></div>
   <script>
     'use strict';
     // All geometry, rules, characters and sounds are contained in this file.
-    var LEVELS = [{"name":"Nível 1 - Linha - 3 lacunas","icon":"➖","subtitle":"2 amiguinhos para colocar em 3 espaços","ruleTip":"Vá ao vizinho vazio à esquerda ou à direita, sem saltar casas.","N":3,"requiredPieces":2,"nodes":[{"x":70,"y":250},{"x":250,"y":250},{"x":430,"y":250}],"lines":[[0,1],[1,2]],"validMoves":[[0,1],[1,0],[1,2],[2,1]],"id":0},{"id":1,"name":"Nível 2 - Triângulo","icon":"🔺","subtitle":"2 amiguinhos para colocar","ruleTip":"Vá a um dos dois vizinhos vazios pela lateral do triângulo, sem saltar casas.","N":3,"requiredPieces":2,"nodes":[{"x":250,"y":100},{"x":110,"y":370},{"x":390,"y":370}],"lines":[[0,1],[1,2],[2,0]],"validMoves":[[0,1],[1,0],[1,2],[2,1],[2,0],[0,2]]},{"id":2,"name":"Nível 3 - Quadrado","icon":"🟦","subtitle":"3 amiguinhos para colocar","ruleTip":"Vá ao vizinho vazio pela lateral do quadrado, sem diagonais nem saltos.","N":4,"requiredPieces":3,"nodes":[{"x":130,"y":130},{"x":370,"y":130},{"x":370,"y":370},{"x":130,"y":370}],"lines":[[0,1],[1,2],[2,3],[3,0]],"validMoves":[[0,1],[1,0],[1,2],[2,1],[2,3],[3,2],[3,0],[0,3]]},{"name":"Nível 4 - Linha - 5 lacunas","icon":"➖","subtitle":"4 amiguinhos para colocar em 5 espaços","ruleTip":"Vá ao vizinho vazio à esquerda ou à direita, sem saltar casas.","N":5,"requiredPieces":4,"nodes":[{"x":70,"y":250},{"x":160,"y":250},{"x":250,"y":250},{"x":340,"y":250},{"x":430,"y":250}],"lines":[[0,1],[1,2],[2,3],[3,4]],"validMoves":[[0,1],[1,0],[1,2],[2,1],[2,3],[3,2],[3,4],[4,3]],"id":3},{"name":"Nível 5 - Círculo - 5 lacunas","icon":"⭕","subtitle":"4 amiguinhos para colocar em 5 espaços","ruleTip":"Vá ao vizinho vazio pela curva, para qualquer lado, sem saltar casas.","N":5,"requiredPieces":4,"circular":true,"radius":180,"nodes":[{"x":250,"y":70},{"x":421.19017293312766,"y":194.37694101250946},{"x":355.80134541264516,"y":395.62305898749054},{"x":144.19865458735484,"y":395.62305898749054},{"x":78.80982706687237,"y":194.3769410125094}],"lines":[[0,1],[1,2],[2,3],[3,4],[4,0]],"validMoves":[[0,1],[1,0],[1,2],[2,1],[2,3],[3,2],[3,4],[4,3],[4,0],[0,4]],"id":4},{"name":"Nível 6 - Círculo - 7 lacunas","icon":"⭕","subtitle":"6 amiguinhos para colocar em 7 espaços","ruleTip":"Vá ao vizinho vazio pela curva, para qualquer lado, sem saltar casas.","N":7,"requiredPieces":6,"circular":true,"radius":180,"nodes":[{"x":250,"y":70},{"x":390.72966684424534,"y":137.77183566542797},{"x":425.48702419272826,"y":290.0537681121366},{"x":328.0990730411605,"y":412.17439622243546},{"x":171.90092695883948,"y":412.1743962224354},{"x":74.51297580727174,"y":290.0537681121366},{"x":109.27033315575463,"y":137.771835665428}],"lines":[[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,0]],"validMoves":[[0,1],[1,0],[1,2],[2,1],[2,3],[3,2],[3,4],[4,3],[4,5],[5,4],[5,6],[6,5],[6,0],[0,6]],"id":5},{"name":"Nível 7 - Pentalfa - 5 lacunas","icon":"⭐","subtitle":"4 amiguinhos na estrela com 5 espaços!","ruleTip":"Vá à ponta vazia ligada pela mesma reta. Cruzamentos sem bolinha não contam como casas.","N":5,"requiredPieces":4,"nodes":[{"x":250,"y":60},{"x":430.70073809607914,"y":191.28677106876},{"x":361.6791979355699,"y":403.71322893124},{"x":138.32080206443013,"y":403.71322893124},{"x":69.29926190392084,"y":191.28677106875995}],"lines":[[0,2],[1,3],[2,4],[3,0],[4,1]],"validMoves":[[0,2],[2,0],[1,3],[3,1],[2,4],[4,2],[3,0],[0,3],[4,1],[1,4]],"id":6},{"id":7,"name":"Nível 8 - Pentalfa Clássico","icon":"⭐","subtitle":"9 amiguinhos na Estrela de 5 Pontas!","ruleTip":"Salte exatamente uma casa em linha reta e pare na seguinte, vazia. A casa do meio pode estar vazia ou ocupada.","N":10,"requiredPieces":9,"nodes":[{"x":250,"y":60,"isOuter":true},{"x":430.70073809607914,"y":191.28677106876,"isOuter":true},{"x":361.6791979355699,"y":403.71322893124,"isOuter":true},{"x":138.32080206443013,"y":403.71322893124,"isOuter":true},{"x":69.29926190392081,"y":191.28677106876,"isOuter":true},{"x":292.6576577750606,"y":191.28677106876,"isInner":true},{"x":319.0215401605093,"y":272.42645786248,"isInner":true},{"x":250,"y":322.57354213752,"isInner":true},{"x":180.9784598394907,"y":272.42645786248005,"isInner":true},{"x":207.3423422249394,"y":191.28677106876,"isInner":true}],"lines":[[0,5],[5,6],[6,2],[1,6],[6,7],[7,3],[2,7],[7,8],[8,4],[3,8],[8,9],[9,0],[4,9],[9,5],[5,1]],"validMoves":[[0,6],[6,0],[5,2],[2,5],[1,7],[7,1],[6,3],[3,6],[2,8],[8,2],[7,4],[4,7],[3,9],[9,3],[8,0],[0,8],[4,5],[5,4],[9,1],[1,9]]}];
+    var LEVELS = [{"name":"Nível 1 - Linha - 3 casas","icon":"➖","subtitle":"2 peças para colocar em 3 casas","ruleTip":"Vá ao vizinho vazio à esquerda ou à direita, sem saltar casas.","N":3,"requiredPieces":2,"nodes":[{"x":70,"y":250},{"x":250,"y":250},{"x":430,"y":250}],"lines":[[0,1],[1,2]],"validMoves":[[0,1],[1,0],[1,2],[2,1]],"id":0},{"id":1,"name":"Nível 2 - Triângulo","icon":"🔺","subtitle":"2 peças para colocar em 3 casas","ruleTip":"Vá a um dos dois vizinhos vazios pela lateral do triângulo, sem saltar casas.","N":3,"requiredPieces":2,"nodes":[{"x":250,"y":100},{"x":110,"y":370},{"x":390,"y":370}],"lines":[[0,1],[1,2],[2,0]],"validMoves":[[0,1],[1,0],[1,2],[2,1],[2,0],[0,2]]},{"id":2,"name":"Nível 3 - Quadrado","icon":"🟦","subtitle":"3 peças para colocar em 4 casas","ruleTip":"Vá ao vizinho vazio pela lateral do quadrado, sem diagonais nem saltos.","N":4,"requiredPieces":3,"nodes":[{"x":130,"y":130},{"x":370,"y":130},{"x":370,"y":370},{"x":130,"y":370}],"lines":[[0,1],[1,2],[2,3],[3,0]],"validMoves":[[0,1],[1,0],[1,2],[2,1],[2,3],[3,2],[3,0],[0,3]]},{"name":"Nível 4 - Linha - 5 casas","icon":"➖","subtitle":"4 peças para colocar em 5 casas","ruleTip":"Vá ao vizinho vazio à esquerda ou à direita, sem saltar casas.","N":5,"requiredPieces":4,"nodes":[{"x":70,"y":250},{"x":160,"y":250},{"x":250,"y":250},{"x":340,"y":250},{"x":430,"y":250}],"lines":[[0,1],[1,2],[2,3],[3,4]],"validMoves":[[0,1],[1,0],[1,2],[2,1],[2,3],[3,2],[3,4],[4,3]],"id":3},{"name":"Nível 5 - Círculo - 5 casas","icon":"⭕","subtitle":"4 peças para colocar em 5 casas","ruleTip":"Vá ao vizinho vazio pela curva, para qualquer lado, sem saltar casas.","N":5,"requiredPieces":4,"circular":true,"radius":180,"nodes":[{"x":250,"y":70},{"x":421.19017293312766,"y":194.37694101250946},{"x":355.80134541264516,"y":395.62305898749054},{"x":144.19865458735484,"y":395.62305898749054},{"x":78.80982706687237,"y":194.3769410125094}],"lines":[[0,1],[1,2],[2,3],[3,4],[4,0]],"validMoves":[[0,1],[1,0],[1,2],[2,1],[2,3],[3,2],[3,4],[4,3],[4,0],[0,4]],"id":4},{"name":"Nível 6 - Círculo - 7 casas","icon":"⭕","subtitle":"6 peças para colocar em 7 casas","ruleTip":"Vá ao vizinho vazio pela curva, para qualquer lado, sem saltar casas.","N":7,"requiredPieces":6,"circular":true,"radius":180,"nodes":[{"x":250,"y":70},{"x":390.72966684424534,"y":137.77183566542797},{"x":425.48702419272826,"y":290.0537681121366},{"x":328.0990730411605,"y":412.17439622243546},{"x":171.90092695883948,"y":412.1743962224354},{"x":74.51297580727174,"y":290.0537681121366},{"x":109.27033315575463,"y":137.771835665428}],"lines":[[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,0]],"validMoves":[[0,1],[1,0],[1,2],[2,1],[2,3],[3,2],[3,4],[4,3],[4,5],[5,4],[5,6],[6,5],[6,0],[0,6]],"id":5},{"name":"Nível 7 - Pentalfa - 5 casas","icon":"⭐","subtitle":"4 peças para colocar em 5 casas","ruleTip":"Vá à ponta vazia ligada pela mesma reta. Cruzamentos sem círculo não contam como casas.","N":5,"requiredPieces":4,"nodes":[{"x":250,"y":60},{"x":430.70073809607914,"y":191.28677106876},{"x":361.6791979355699,"y":403.71322893124},{"x":138.32080206443013,"y":403.71322893124},{"x":69.29926190392084,"y":191.28677106875995}],"lines":[[0,2],[1,3],[2,4],[3,0],[4,1]],"validMoves":[[0,2],[2,0],[1,3],[3,1],[2,4],[4,2],[3,0],[0,3],[4,1],[1,4]],"id":6},{"id":7,"name":"Nível 8 - Pentalfa Clássico","icon":"⭐","subtitle":"9 peças para colocar em 10 casas","ruleTip":"Parta de uma casa vazia, salte exatamente uma casa em linha reta e pare na próxima casa vazia. A casa saltada pode estar vazia ou ocupada.","N":10,"requiredPieces":9,"nodes":[{"x":250,"y":60,"isOuter":true},{"x":430.70073809607914,"y":191.28677106876,"isOuter":true},{"x":361.6791979355699,"y":403.71322893124,"isOuter":true},{"x":138.32080206443013,"y":403.71322893124,"isOuter":true},{"x":69.29926190392081,"y":191.28677106876,"isOuter":true},{"x":292.6576577750606,"y":191.28677106876,"isInner":true},{"x":319.0215401605093,"y":272.42645786248,"isInner":true},{"x":250,"y":322.57354213752,"isInner":true},{"x":180.9784598394907,"y":272.42645786248005,"isInner":true},{"x":207.3423422249394,"y":191.28677106876,"isInner":true}],"lines":[[0,5],[5,6],[6,2],[1,6],[6,7],[7,3],[2,7],[7,8],[8,4],[3,8],[8,9],[9,0],[4,9],[9,5],[5,1]],"validMoves":[[0,6],[6,0],[5,2],[2,5],[1,7],[7,1],[6,3],[3,6],[2,8],[8,2],[7,4],[4,7],[3,9],[9,3],[8,0],[0,8],[4,5],[5,4],[9,1],[1,9]]}];
     var CHARACTER_SPRITES = [{"emoji":"🐱","bg":"#fef08a","border":"#f59e0b","name":"Gatinho"},{"emoji":"🐶","bg":"#fed7aa","border":"#ea580c","name":"Cachorrinho"},{"emoji":"🐰","bg":"#fbcfe8","border":"#db2777","name":"Coelhinho"},{"emoji":"🦊","bg":"#ffedd5","border":"#f97316","name":"Raposinha"},{"emoji":"🐼","bg":"#f1f5f9","border":"#475569","name":"Panda"},{"emoji":"🐸","bg":"#dcfce7","border":"#16a34a","name":"Sapo"},{"emoji":"🦄","bg":"#f3e8ff","border":"#9333ea","name":"Unicórnio"},{"emoji":"🐻","bg":"#fef3c7","border":"#d97706","name":"Ursinho"},{"emoji":"⭐","bg":"#fef9c3","border":"#eab308","name":"Estrelinha"}];
     var SVG_NS = 'http://www.w3.org/2000/svg';
     function byId(id) { return document.getElementById(id); }
@@ -225,7 +318,7 @@
     SoundEngine.prototype.playVictory = function () { this.playTone(1047, 0.35); };
 
     function PentalfaGame() {
-      this.currentLevelIdx = 0; this.level = LEVELS[0]; this.boardState = [];
+      this.currentLevelIdx = 0; this.level = LEVELS[0]; this.boardState = []; this.completedLevels = [];
       this.selectedStartNode = null; this.validTargetNodes = []; this.placedCount = 0;
       this.isAnimating = false; this.finished = false; this.gameAnimationFrame = null;
       this.tutorialAnimationFrame = null; this.tutorialExample = null; this.tutorialOpen = false;
@@ -249,7 +342,7 @@
           (self.placedCount >= self.level.requiredPieces ? byId('victory-modal') : byId('gameover-modal')) : null;
         if (key === 9 && activeModal) {
           var buttons = activeModal.getElementsByTagName('button'), available = [], j;
-          for (j = 0; j < buttons.length; j++) if (buttons[j].style.display !== 'none') available.push(buttons[j]);
+          for (j = 0; j < buttons.length; j++) if (buttons[j].style.display !== 'none' && !/(^|\s)hidden(\s|$)/.test(buttons[j].className)) available.push(buttons[j]);
           if (!available.length) return;
           var first = available[0], last = available[available.length - 1];
           if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
@@ -259,6 +352,7 @@
     };
     PentalfaGame.prototype.loadLevel = function (index) {
       if (index < 0 || index >= LEVELS.length) return;
+      var enteringClassic = LEVELS[index].id === 7 && this.currentLevelIdx !== index;
       cancelFrame(this.gameAnimationFrame); this.gameAnimationFrame = null; this.moveAnimation = null;
       this.stopTutorialExample(); this.tutorialExample = null; this.tutorialOpen = false;
       this.hideModals(); this.currentLevelIdx = index; this.level = LEVELS[index];
@@ -275,8 +369,10 @@
       byId('rule-tip').textContent = this.level.ruleTip;
       this.svg.setAttribute('aria-label', 'Tabuleiro: ' + this.level.name);
       this.updateTutorial(); this.updateRemainingCounter(); this.renderBoard();
-      this.updateInstruction('Clique em uma bolinha vazia para começar!');
+      this.updateInstruction('Escolha uma casa vazia para começar!');
+      if (enteringClassic) this.openTutorial();
     };
+    PentalfaGame.prototype.startNewGame = function () { this.completedLevels = []; this.loadLevel(0); };
     PentalfaGame.prototype.resetLevel = function () { this.loadLevel(this.currentLevelIdx); };
     PentalfaGame.prototype.nextLevel = function () { this.loadLevel((this.currentLevelIdx + 1) % LEVELS.length); };
     PentalfaGame.prototype.updateInstruction = function (text) { byId('instruction-text').textContent = text; };
@@ -316,8 +412,8 @@
       for (i = 0; i < this.level.N; i++) {
         node = this.level.nodes[i]; occupied = this.boardState[i] !== null; target = false;
         for (j = 0; j < this.validTargetNodes.length; j++) if (this.validTargetNodes[j] === i) target = true;
-        group = svgElement('g', { transform: 'translate(' + node.x + ',' + node.y + ')', 'class': 'node', role: 'button', tabindex: 0, 'aria-label': 'Bolinha ' + (i + 1) + (occupied ? ', ocupada' : target ? ', destino vazio' : ', vazia') });
-        group.appendChild(svgElement('circle', { r: 27, fill: occupied ? '#fff' : target ? '#ffe69a' : this.selectedStartNode === i ? '#d8efff' : '#f5f9ff', stroke: '#000000', 'stroke-width': this.selectedStartNode === i || target ? 5 : 3 }));
+        group = svgElement('g', { transform: 'translate(' + node.x + ',' + node.y + ')', 'class': 'node', role: 'button', tabindex: 0, 'aria-label': 'Casa ' + (i + 1) + (occupied ? ', ocupada' : target ? ', destino vazio' : ', vazia') });
+        group.appendChild(svgElement('circle', { r: 27, fill: occupied ? '#fff' : target ? '#ffe69a' : this.selectedStartNode === i ? '#d8efff' : '#f5f9ff', stroke: '#aebdd2', 'stroke-width': this.selectedStartNode === i || target ? 5 : 3 }));
         if (occupied) group.appendChild(this.createPieceElement(this.boardState[i]));
         else group.appendChild(svgElement('circle', { r: 12, fill: target ? '#f8cf62' : '#dce7f2' }));
         (function (index, element) {
@@ -342,16 +438,16 @@
       if (this.isAnimating || this.finished || this.tutorialOpen) return;
       if (this.selectedStartNode === null) {
         var targets = this.getValidTargetsForStart(index);
-        if (!targets.length) { audio.playError(); this.updateInstruction(this.boardState[index] !== null ? 'Essa bolinha já está ocupada. Escolha uma vazia!' : 'Não há destino livre daqui. Escolha outro início!'); return; }
+        if (!targets.length) { audio.playError(); this.updateInstruction(this.boardState[index] !== null ? 'Essa casa já está ocupada. Escolha uma vazia!' : 'Não há destino livre daqui. Escolha outro início!'); return; }
         this.selectedStartNode = index; this.validTargetNodes = targets; audio.playSelect();
-        this.updateInstruction('Agora clique em um destino amarelo e vazio!'); this.renderBoard();
+        this.updateInstruction('Escolha uma casa amarela e vazia para colocar a peça.'); this.renderBoard();
       } else if (index === this.selectedStartNode) {
-        this.selectedStartNode = null; this.validTargetNodes = []; this.renderBoard(); this.updateInstruction('Clique em uma bolinha vazia para começar!');
+        this.selectedStartNode = null; this.validTargetNodes = []; this.renderBoard(); this.updateInstruction('Escolha uma casa vazia para começar!');
       } else {
         var valid = false, i;
         for (i = 0; i < this.validTargetNodes.length; i++) if (this.validTargetNodes[i] === index) valid = true;
         if (valid) this.executeMove(this.selectedStartNode, index);
-        else { audio.playError(); this.updateInstruction('Escolha um destino amarelo e vazio!'); }
+        else { audio.playError(); this.updateInstruction('Escolha uma casa amarela e vazia.'); }
       }
     };
     PentalfaGame.prototype.movePosition = function (startIndex, endIndex, progress) {
@@ -412,13 +508,19 @@
     PentalfaGame.prototype.checkGameState = function () {
       if (this.placedCount >= this.level.requiredPieces) {
         this.finished = true; audio.playVictory();
-        var next = this.currentLevelIdx < LEVELS.length - 1;
-        byId('victory-message').textContent = next ? 'Você completou ' + this.level.name + '! Vamos ao próximo desafio?' : 'INCRÍVEL! Você completou todos os níveis e dominou a Pentalfa!';
-        byId('btn-next-level').style.display = next ? '' : 'none';
+        this.completedLevels[this.currentLevelIdx] = true;
+        var allCompleted = true, i;
+        for (i = 0; i < LEVELS.length; i++) if (!this.completedLevels[i]) allCompleted = false;
+        byId('victory-card').className = 'modal-card' + (allCompleted ? ' final-victory' : '');
+        byId('victory-title').textContent = allCompleted ? 'Parabéns! Você venceu todas as fases!' : 'Parabéns! Você venceu esta fase!';
+        byId('victory-message').textContent = allCompleted ? 'Você completou os 8 desafios do Pentalfa Mágico! Sua atenção, estratégia e persistência levaram você até a vitória. Excelente conquista!' : 'Você colocou as ' + this.level.requiredPieces + ' peças e completou ' + this.level.name + '!';
+        setHidden(byId('btn-new-game'), !allCompleted);
+        byId('btn-next-level').style.display = allCompleted ? 'none' : '';
+        byId('btn-next-level').textContent = this.currentLevelIdx < LEVELS.length - 1 ? 'Próxima fase! ➡️' : 'Voltar às fases anteriores ↺';
         this.showModal('victory-modal');
       } else if (!this.checkAnyMoveAvailable()) {
         this.finished = true; audio.playError(); this.showModal('gameover-modal');
-      } else this.updateInstruction('Muito bem! Escolha um início vazio para o próximo amiguinho!');
+      } else this.updateInstruction('Peça colocada! Escolha uma casa vazia para a próxima jogada.');
     };
     PentalfaGame.prototype.hideModals = function () {
       setHidden(byId('tutorial-modal'), true); setHidden(byId('victory-modal'), true); setHidden(byId('gameover-modal'), true);
@@ -428,12 +530,13 @@
       this.modalFocus = document.activeElement;
       setHidden(byId(id), false); document.body.style.overflow = 'hidden';
       var buttons = byId(id).getElementsByTagName('button'), i;
-      for (i = 0; i < buttons.length; i++) if (buttons[i].style.display !== 'none') { buttons[i].focus(); break; }
+      for (i = 0; i < buttons.length; i++) if (buttons[i].style.display !== 'none' && !/(^|\s)hidden(\s|$)/.test(buttons[i].className)) { buttons[i].focus(); break; }
     };
     PentalfaGame.prototype.updateTutorial = function () {
+      setHidden(byId('classic-rules-notice'), this.level.id !== 7);
       byId('tutorial-title').textContent = 'Como jogar: ' + this.level.name;
-      byId('tutorial-objective').textContent = 'Encaixe ' + this.level.requiredPieces + ' amiguinhos nas ' + this.level.N + ' bolinhas. Uma bolinha fica vazia!';
-      byId('tutorial-movement').textContent = this.level.ruleTip;
+      byId('tutorial-objective').textContent = this.level.id === 7 ? 'Coloque 9 peças na estrela. Deixe uma casa vazia.' : 'Coloque ' + this.level.requiredPieces + ' peças em ' + this.level.N + ' casas. Deixe uma casa vazia.';
+      byId('tutorial-movement').textContent = this.level.id === 7 ? 'Escolha uma casa vazia. Salte exatamente uma casa em linha reta e coloque a peça na próxima casa vazia. A casa saltada pode estar vazia ou ocupada. A peça colocada não se move mais.' : 'Escolha uma casa vazia. ' + this.level.ruleTip + ' A peça fica no destino e não se move mais.';
     };
     PentalfaGame.prototype.stopTutorialExample = function () {
       cancelFrame(this.tutorialAnimationFrame); this.tutorialAnimationFrame = null;
@@ -450,7 +553,7 @@
       line.setAttribute('stroke', '#FFD600'); line.setAttribute('stroke-width', 10); line.setAttribute('stroke-dasharray', '10 6'); svg.appendChild(line);
       for (i = 0; i < this.level.N; i++) {
         node = this.level.nodes[i];
-        svg.appendChild(svgElement('circle', { cx: node.x, cy: node.y, r: 22, fill: i === endIndex ? '#ffe69a' : i === startIndex ? '#d8efff' : '#f5f9ff', stroke: '#000000', 'stroke-width': 4 }));
+        svg.appendChild(svgElement('circle', { cx: node.x, cy: node.y, r: 22, fill: i === endIndex ? '#ffe69a' : i === startIndex ? '#d8efff' : '#f5f9ff', stroke: '#aebdd2', 'stroke-width': 4 }));
         if (i === startIndex || i === endIndex) {
           label = svgElement('text', { x: node.x, y: node.y - 31, 'text-anchor': 'middle', 'font-size': 20, 'font-weight': 'bold', fill: '#334155' });
           label.textContent = i === startIndex ? 'Início' : 'Destino'; svg.appendChild(label);
@@ -471,7 +574,7 @@
       var self = this, piece = this.tutorialExample.piece, caption = byId('tutorial-example-caption');
       if (reducedMotion()) {
         piece.setAttribute('opacity', 1); this.positionTutorialPiece(1);
-        caption.textContent = 'Da bolinha azul ao destino amarelo: a peça fica no destino.'; return;
+        caption.textContent = this.level.id === 7 ? 'Da casa azul, salte uma casa em linha reta até a amarela. A peça fica no destino.' : 'Da casa azul à amarela: a peça fica no destino e não se move mais.'; return;
       }
       var started = now(), lastDraw = -100;
       function animate(time) {
@@ -483,7 +586,7 @@
           piece.setAttribute('opacity', elapsed < 500 ? 0 : 1);
           self.positionTutorialPiece(Math.max(0, Math.min((elapsed - 1400) / 2600, 1)));
           var message = elapsed < 1400 ? '1. Escolha o início vazio (azul).' : elapsed < 4000 ?
-            (self.level.N === 10 ? '2. Salte uma casa em linha reta até o destino vazio.' : '2. Vá ao destino vazio destacado em amarelo.') :
+            (self.level.id === 7 ? '2. Salte exatamente uma casa em linha reta até a casa amarela vazia.' : '2. Vá ao destino vazio destacado em amarelo.') :
             '3. Pronto! A peça fica aqui e não pode mais se mover.';
           if (caption.textContent !== message) caption.textContent = message;
         }
